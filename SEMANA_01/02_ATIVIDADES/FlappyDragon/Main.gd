@@ -1,10 +1,13 @@
 extends Node # instancia a classe Node2D
-
+#Controla se o jogo está no menu/tela de morte com o dragão parado ou com o jogo rodando
 var status = 1
+#Var vscore controla a pontuação do jogo
 var vscore = 0
-var x = 1.5 
-var y = 1.5 
-
+#Var x controla a velocidade que o dragão vai pra frente 
+var x = 3
+#var y controla a velocidade que o dragão cai
+var y = 3
+#para completar a atividade e aumentar a velocidade do dragão, tambêm aumentei a velocidade que ele sobe e desce usando as setas
 # executa essa função ao carregar o jogo
 func _ready():
 	# oculta o "gameover"
@@ -41,11 +44,11 @@ func _process(delta):
 			
 		# se apertou seta para baixo, aumenta o valor de y (posição vertical) do dragão
 		if Input.is_action_pressed("ui_down"):
-			$dragon.position.y += 2
+			$dragon.position.y += 6
 
 		# se apertou seta para cima, diminui o valor de y (posição vertical) do dragão
 		if Input.is_action_pressed("ui_up"):
-			$dragon.position.y -= 4
+			$dragon.position.y -= 9
 			
 	elif status == 0: # parado
 		
@@ -75,4 +78,6 @@ func _on_columns_body_shape_exited(body_id, body, body_shape, local_shape):
 		vscore += 1 # aumenta o score
 		$score.set_text(str(vscore)) # atualiza o painel
 		
+		
+#Comentarios Do Bruno Gottardo Conti
 
