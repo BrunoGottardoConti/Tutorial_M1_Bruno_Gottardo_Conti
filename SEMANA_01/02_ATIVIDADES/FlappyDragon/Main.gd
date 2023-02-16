@@ -79,5 +79,3 @@ func _on_columns_body_shape_exited(body_id, body, body_shape, local_shape):
 		$score.set_text(str(vscore)) # atualiza o painel
 		
 		
-#Comentarios Do Bruno Gottardo Conti
-
